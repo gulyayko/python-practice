@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Squares (Beginner)",
+    "functionName": "get_squares",
+    "description": "Return list of squared numbers.",
+    "template": "def get_squares(numbers: list[int]) -> list[int]:\n    \"\"\"\n    Return list of squared numbers.\n    :param numbers: list of integers\n    \"\"\"\n    return []",
+    "tests": [
+      { "input": [1, 2, 3], "expected": [1, 4, 9] },
+      { "input": [], "expected": [] },
+      { "input": [-2, 3], "expected": [4, 9] }
+    ]
+  },
+  {
+    "title": "Group by First Letter (Medium)",
+    "functionName": "group_by_first_letter",
+    "description": "Group words by their first letter.",
+    "template": "def group_by_first_letter(words: list[str]) -> dict[str, list[str]]:\n    \"\"\"\n    Group words by their first letter.\n    :param words: list of strings\n    \"\"\"\n    return {}",
+    "tests": [
+      {
+        "input": ["apple", "banana", "apricot", "blueberry"],
+        "expected": {
+          "a": ["apple", "apricot"],
+          "b": ["banana", "blueberry"]
+        }
+      }
+    ]
+  }
+]

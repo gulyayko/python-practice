@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Python Practice</title>
+
+<!-- Подключаем Pyodide -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
+<!-- Стили -->
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 40px;
+}
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+h1 { margin-top: 0; }
+select { padding: 8px; font-size: 14px; margin-bottom: 20px; }
+textarea { width: 100%; height: 220px; font-family: monospace; font-size: 14px; padding: 12px; border-radius: 8px; border: 1px solid #ccc; }
+button { margin-top: 15px; padding: 10px 18px; border-radius: 8px; border: none; background: #2563eb; color: white; font-weight: 600; cursor: pointer; }
+button:hover { background: #1e4fd8; }
+pre { background: #f1f3f5; padding: 15px; border-radius: 8px; margin-top: 20px; white-space: pre-wrap; }
+.success { color: #15803d; }
+.error { color: #b91c1c; }
+.task-description { margin-bottom: 20px; color: #444; }
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>🐍 Python Practice</h1>
+<select id="taskSelect"></select>
+<div class="task-description" id="taskDescription"></div>
+<textarea id="code"></textarea>
+<button onclick="runCode()">Run Tests</button>
+<pre id="output"></pre>
+</div>
+
+<!-- Подключаем отдельный JS -->
+<script src="script.js"></script>
+</body>
+</html>
