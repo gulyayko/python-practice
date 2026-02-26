@@ -3,7 +3,11 @@ let tasks = [];
 let currentTaskIndex = 0;
 let currentAttempts = 1;
 let attemptStartTime;
-const levels = ["Beginner", "Junior", "Junior Plus"];
+const levels = [
+    { value: "beginner", label: "Beginner" },
+    { value: "junior", label: "Junior" },
+    { value: "junior_plus", label: "Junior Plus" }
+];
 window.allTasksByLevelTopic = {};
 
 // ---------------- INIT ----------------
@@ -38,8 +42,8 @@ async function populateLevels() {
 
     levels.forEach(level => {
         const option = document.createElement("option");
-        option.value = level;
-        option.textContent = level;
+        option.value = level.value;   // системное имя
+        option.textContent = level.label; // красивое имя
         levelSelect.appendChild(option);
     });
 
@@ -50,7 +54,7 @@ async function populateLevels() {
         updateProgressUI();
     });
 
-    const firstLevel = levels[0];
+    const firstLevel = levels[0].value;
     await loadAllTasksForLevel(firstLevel);
     populateTopics(firstLevel);
     updateProgressUI();
