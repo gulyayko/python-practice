@@ -1,0 +1,9 @@
+{
+  "selectLevel": "Level",
+  "selectTopic": "Topic",
+  "runTests": "Run Tests",
+  "nextTask": "Next Task",
+  "allTestsPassed": "All tests passed 🎉",
+  "attempt": "Attempt",
+  "score": "Score"
+}

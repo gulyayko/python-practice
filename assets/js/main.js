@@ -8,6 +8,7 @@ const levels = [
     { value: "junior", label: "Junior" },
     { value: "junior_plus", label: "Junior Plus" }
 ];
+
 window.allTasksByLevelTopic = {};
 
 // ---------------- INIT ----------------
@@ -83,14 +84,14 @@ async function loadAllTasksForLevel(level) {
     window.allTasksByLevelTopic[level] = {};
 
     try {
-        const indexResponse = await fetch(`tasks/${level}/index.json`);
+        const indexResponse = await fetch(`data/tasks/python/${level}/index.json`);
         if (!indexResponse.ok) return;
 
         const files = await indexResponse.json();
 
         for (const file of files) {
             try {
-                const response = await fetch(`tasks/${level}/${file}`);
+                const response = await fetch(`data/tasks/python/${level}/${file}`);
                 if (!response.ok) continue;
 
                 const data = await response.json();
