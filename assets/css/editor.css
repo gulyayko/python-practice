@@ -1,8 +1,7 @@
 /* === PyCharm Monokai clone === */
 
 .cm-s-monokai.CodeMirror {
-    /*background: #212121;*/
-    background: red !important;
+    background: #212121;
     color: #f8f8f2;
 }
 
@@ -51,7 +50,7 @@
 }
 
 .cm-s-monokai .cm-def {
-    color: #a6e22e;
+    color: #a6e22e !important;
 }
 
 .cm-s-monokai .cm-variable {
