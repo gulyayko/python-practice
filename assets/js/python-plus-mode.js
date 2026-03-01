@@ -26,7 +26,7 @@
         }
     };
 
-    CodeMirror.defineMode("python-docstring", function(config) {
+    CodeMirror.defineMode("python-plus", function(config) {
         const pythonMode = CodeMirror.getMode(config, "python");
         return CodeMirror.overlayMode(pythonMode, tripleQuoteOverlay);
     });
