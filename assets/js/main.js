@@ -20,7 +20,7 @@ async function init() {
     const textarea = document.getElementById("code");
     if (textarea) {
         window.editor = CodeMirror.fromTextArea(textarea, {
-            mode: "python",
+            mode: "python-plus",
             theme: "my-monokai",
             lineNumbers: true,
             lineWrapping: true,
