@@ -1,0 +1,82 @@
+/* === My Monokai Theme for CodeMirror === */
+
+.cm-s-my-monokai.CodeMirror {
+    background: #212121;
+    color: #f8f8f2;
+}
+
+/* Line numbers */
+.cm-s-my-monokai .CodeMirror-gutters {
+    background: #212121;
+    border-right: 0;
+    color: #5c6370;
+}
+
+.cm-s-my-monokai .CodeMirror-linenumber {
+    color: #5c6370;
+}
+
+/* Cursor */
+.cm-s-my-monokai .CodeMirror-cursor {
+    border-left: 1px solid #f8f8f0;
+}
+
+/* Selection */
+.cm-s-my-monokai .CodeMirror-selected {
+    background: #3a3f4b;
+}
+
+/* Syntax highlighting */
+.cm-s-my-monokai .cm-comment {
+    color: #6a8759;
+    font-style: italic;
+}
+
+.cm-s-my-monokai .cm-string {
+    color: #e6db74;
+}
+
+.cm-s-my-monokai .cm-number,
+.cm-s-my-monokai .cm-atom {
+    color: #ae81ff;
+}
+
+.cm-s-my-monokai .cm-keyword {
+    color: #f92672;
+    font-weight: 500;
+}
+
+.cm-s-my-monokai .cm-operator {
+    color: #f92672;
+}
+
+.cm-s-my-monokai .cm-def {
+    color: #a6e22e;
+}
+
+.cm-s-my-monokai .cm-variable {
+    color: #f8f8f2;
+}
+
+.cm-s-my-monokai .cm-variable-2,
+.cm-s-my-monokai .cm-type {
+    color: #66d9ef;
+}
+
+.cm-s-my-monokai .cm-builtin {
+    color: #66d9ef;
+}
+
+.cm-s-my-monokai .cm-property {
+    color: #a6e22e;
+}
+
+.cm-s-my-monokai .cm-meta {
+    color: #bbb529;
+}
+
+/* Matching brackets */
+.cm-s-my-monokai .CodeMirror-matchingbracket {
+    text-decoration: underline;
+    color: #ffffff;
+}
