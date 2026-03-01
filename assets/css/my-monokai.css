@@ -82,6 +82,5 @@
 }
 
 .cm-s-my-monokai .cm-docstring {
-    color: #a0a0ff;  /* цвет для docstring */
-    font-style: italic;
+    color: #75715E;  /* цвет для docstring */
 }
