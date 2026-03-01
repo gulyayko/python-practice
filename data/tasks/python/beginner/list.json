@@ -1,0 +1,60 @@
+{
+  "topic": "List",
+  "tasks": [
+    {
+      "title": "Sum of list",
+      "description": "Write a function that sums a list of numbers",
+      "functionName": "sum_list",
+      "template": "def sum_list(lst: list[int]) -> int:\n    \"\"\"\n    Return list sum.\n    :param lst: list of integers\n    \"\"\"\n    return",
+      "tests": [
+        {"input": [1,2,3], "expected": 6},
+        {"input": [0,0], "expected": 0}
+      ],
+      "weight": 1
+    },
+    {
+      "title": "Reverse string",
+      "description": "Write a function that reverses a string",
+      "functionName": "reverse_string",
+      "template": "def reverse_string(s: str) -> str:\n    \"\"\"\n    Return reversed string.\n    :param s: input string\n    \"\"\"\n    return",
+      "tests": [
+        {"input": "abc", "expected": "cba"},
+        {"input": "", "expected": ""}
+      ],
+      "weight": 1
+    },
+    {
+      "title": "Maximum in list",
+      "description": "Return the maximum value from a list of numbers",
+      "functionName": "max_in_list",
+      "template": "def max_in_list(lst: list[int]) -> int:\n    \"\"\"\n    Return maximum value in list.\n    :param lst: list of integers\n    \"\"\"\n    return",
+      "tests": [
+        {"input": [1,5,3], "expected": 5},
+        {"input": [-1,-5,-3], "expected": -1}
+      ],
+      "weight": 2
+    },
+    {
+      "title": "Check even number",
+      "description": "Return True if number is even, False otherwise",
+      "functionName": "is_even",
+      "template": "def is_even(n: int) -> bool:\n    \"\"\"\n    Check if a number is even.\n    :param n: integer\n    \"\"\"\n    return",
+      "tests": [
+        {"input": 4, "expected": true},
+        {"input": 5, "expected": false}
+      ],
+      "weight": 2
+    },
+    {
+      "title": "Sum of squares",
+      "description": "Return the sum of squares of numbers in a list using list comprehension",
+      "functionName": "sum_of_squares",
+      "template": "def sum_of_squares(lst: list[int]) -> int:\n    \"\"\"\n    Return sum of squares.\n    :param lst: list of integers\n    \"\"\"\n    return",
+      "tests": [
+        {"input": [1,2,3], "expected": 14},
+        {"input": [0,1], "expected": 1}
+      ],
+      "weight": 3
+    }
+  ]
+}

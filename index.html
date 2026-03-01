@@ -5,23 +5,27 @@
   <title>Python Practice</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- Styles -->
+  <!-- Global Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Pyodide -->
-  <script type="module" src="src/pyodideLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
 </head>
 
 <body>
+
 <div class="container">
+
   <h1 class="app-title">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="logo">
     Python Practice
   </h1>
 
+  <!-- Selectors and Progress/Score -->
   <div class="selectors-wrapper">
+    <!-- Левый блок: селекторы -->
     <div class="selectors">
       <label>
         <span data-i18n="selectLevel">Level</span>
@@ -34,19 +38,21 @@
       </label>
 
       <label>
-        <span data-i18n="selectLanguage">Language</span>
-        <select id="languageSelect">
-          <option value="en">English</option>
-          <option value="ru">Русский</option>
-        </select>
+        Task
+        <select id="taskSelect"></select>
       </label>
 
+      <!-- Языки UI -->
       <label>
-        <span data-i18n="selectTask">Task</span>
-        <select id="taskSelect"></select>
+        Language
+        <select id="languageSelect">
+          <option value="en">English</option>
+          <!-- Добавьте другие языки -->
+        </select>
       </label>
     </div>
 
+    <!-- Правый блок: прогресс + счет -->
     <div class="progress-score-wrapper">
       <div class="level-progress">
         <span class="progress-label">Level Progress</span>
@@ -54,7 +60,7 @@
       </div>
 
       <div class="score-container">
-        <span class="score-label">Score</span>
+        <span class="score-label" data-i18n="score">Score</span>
         <span id="scoreValue" class="score-value">0</span>
       </div>
     </div>
@@ -62,25 +68,33 @@
 
   <hr class="section-divider">
 
+  <!-- Task -->
   <div class="task-card">
     <div class="task-description" id="taskDescription"></div>
-    <div class="editor-container"></div>
-    <button id="runButton" data-i18n="runTests">Run Tests</button>
+    <div class="editor-container" id="editor"></div>
+    <button onclick="runCode()" data-i18n="runTests">Run Tests</button>
   </div>
 
   <hr class="section-divider">
 
+  <!-- Output -->
   <pre id="output"></pre>
 
+  <!-- Results -->
   <div class="results-card">
     <div id="testTableContainer"></div>
   </div>
+
 </div>
 
 <footer class="footer">
   v 0.8.1
 </footer>
 
-<script type="module" src="src/main.js"></script>
+<!-- CM6 и Автодополнение -->
+<script type="module">
+  import "./src/main.js";
+</script>
+
 </body>
 </html>

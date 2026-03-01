@@ -1,29 +1,17 @@
-export const translations = {
-    en: {
-        selectLevel: "Level",
-        selectTopic: "Topic",
-        selectTask: "Task",
-        selectLanguage: "Language",
-        runTests: "Run Tests",
-        allTestsPassed: "All tests passed 🎉",
-        attempt: "Attempt",
-        score: "Score"
-    },
-    ru: {
-        selectLevel: "Уровень",
-        selectTopic: "Тема",
-        selectTask: "Задача",
-        selectLanguage: "Язык",
-        runTests: "Запустить тесты",
-        allTestsPassed: "Все тесты пройдены 🎉",
-        attempt: "Попытка",
-        score: "Очки"
+export async function loadTranslations(lang = "en") {
+    try {
+        const res = await fetch(`data/ui/${lang}.json`);
+        if (!res.ok) return {};
+        return await res.json();
+    } catch {
+        return {};
     }
-};
+}
 
-export function applyTranslations(lang = "en") {
+export async function applyTranslations(lang = "en") {
+    const dict = await loadTranslations(lang);
     document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.dataset.i18n;
-        if (translations[lang]?.[key]) el.textContent = translations[lang][key];
+        if (dict[key]) el.textContent = dict[key];
     });
 }
