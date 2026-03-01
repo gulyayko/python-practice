@@ -1,33 +1,32 @@
 /* global CodeMirror */
-
-// overlay mode для Python docstring
 (function() {
     const tripleQuoteOverlay = {
         token: function(stream, state) {
-            // проверяем начало тройных кавычек
-            if (stream.match('"""') || stream.match("'''")) {
-                state.inDocstring = true;
-                return "docstring"; // токен для CSS
-            }
+            // Если уже в docstring
             if (state.inDocstring) {
-                // ищем закрывающие тройные кавычки
-                if (stream.skipTo('"""') || stream.skipTo("'''")) {
+                if (stream.match(state.quote)) {  // нашли закрывающую кавычку
                     state.inDocstring = false;
+                    state.quote = null;
                     return "docstring";
                 }
-                stream.skipToEnd();
+                stream.next();  // съедаем символ
                 return "docstring";
             }
-            while (stream.next() != null && !stream.match('"""', false) && !stream.match("'''", false)) {}
+            // Ищем открывающую тройную кавычку
+            if (stream.match('"""') || stream.match("'''")) {
+                state.inDocstring = true;
+                state.quote = stream.current(); // сохраняем какой тип кавычек
+                return "docstring";
+            }
+            stream.next();
             return null;
         },
         startState: function() {
-            return { inDocstring: false };
+            return { inDocstring: false, quote: null };
         }
     };
 
-    // создаём overlay поверх стандартного Python режима
-    CodeMirror.defineMode("python-plus", function(config) {
+    CodeMirror.defineMode("python-docstring", function(config) {
         const pythonMode = CodeMirror.getMode(config, "python");
         return CodeMirror.overlayMode(pythonMode, tripleQuoteOverlay);
     });
