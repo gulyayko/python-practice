@@ -80,3 +80,8 @@
     text-decoration: underline;
     color: #ffffff;
 }
+
+.cm-s-my-monokai .cm-docstring {
+    color: #a0a0ff;  /* цвет для docstring */
+    font-style: italic;
+}
