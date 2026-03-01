@@ -21,7 +21,7 @@ async function init() {
     if (textarea) {
         window.editor = CodeMirror.fromTextArea(textarea, {
             mode: "python",
-            theme: "monokai",
+            theme: "material-darker",
             lineNumbers: true,
             lineWrapping: true,
             indentUnit: 4,
