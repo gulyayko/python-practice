@@ -1,98 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Python Practice</title>
-
-    <!-- Pyodide -->
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- CodeMirror 5 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/monokai.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/python/python.min.js"></script>
-
-    <!-- Favicon Python -->
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+<h1>Python Practice</h1>
 
-<div class="container">
+<div id="editor"></div>
 
-    <h1 class="app-title">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="logo">
-        Python Practice
-    </h1>
-
-    <!-- Selectors and Progress/Score -->
-    <div class="selectors-wrapper">
-        <!-- Левый блок: селекторы -->
-        <div class="selectors">
-            <label>
-                Level
-                <select id="levelSelect"></select>
-            </label>
-
-            <label>
-                Topic
-                <select id="topicSelect"></select>
-            </label>
-
-            <label>
-                Task
-                <select id="taskSelect"></select>
-            </label>
-        </div>
-
-        <!-- Правый блок: прогресс + счет -->
-        <div class="progress-score-wrapper">
-            <div class="level-progress">
-                <span class="progress-label">Level Progress</span>
-                <span id="progressBar" class="progress-bar"></span>
-            </div>
-
-            <div class="score-container">
-                <span class="score-label">Score</span>
-                <span id="scoreValue" class="score-value">0</span>
-            </div>
-        </div>
-    </div>
-
-    <hr class="section-divider">
-
-    <!-- Task -->
-    <div class="task-card">
-        <div class="task-description" id="taskDescription"></div>
-        <div class="editor-container">
-            <textarea id="code"></textarea>
-        </div>
-        <button onclick="runCode()">Run Tests</button>
-    </div>
-
-    <hr class="section-divider">
-
-    <!-- Output -->
-    <pre id="output"></pre>
-
-    <!-- Results -->
-    <div class="results-card">
-        <div id="testTableContainer"></div>
-    </div>
-
-</div>
-
-<footer class="footer">
-    v 0.6.5
-</footer>
-
-<script src="script.js"></script>
+<script type="module" src="/src/main.js"></script>
 </body>
 </html>
