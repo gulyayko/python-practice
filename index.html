@@ -1,15 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Python Practice</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Pyodide -->
+  <script type="module" src="src/pyodideLoader.js"></script>
 </head>
+
 <body>
-<h1>Python Practice</h1>
+<div class="container">
+  <h1 class="app-title">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="logo">
+    Python Practice
+  </h1>
 
-<div id="editor"></div>
+  <div class="selectors-wrapper">
+    <div class="selectors">
+      <label>
+        <span data-i18n="selectLevel">Level</span>
+        <select id="levelSelect"></select>
+      </label>
 
-<script type="module" src="/src/main.js"></script>
+      <label>
+        <span data-i18n="selectTopic">Topic</span>
+        <select id="topicSelect"></select>
+      </label>
+
+      <label>
+        <span data-i18n="selectLanguage">Language</span>
+        <select id="languageSelect">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+        </select>
+      </label>
+
+      <label>
+        <span data-i18n="selectTask">Task</span>
+        <select id="taskSelect"></select>
+      </label>
+    </div>
+
+    <div class="progress-score-wrapper">
+      <div class="level-progress">
+        <span class="progress-label">Level Progress</span>
+        <span id="progressBar" class="progress-bar"></span>
+      </div>
+
+      <div class="score-container">
+        <span class="score-label">Score</span>
+        <span id="scoreValue" class="score-value">0</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="task-card">
+    <div class="task-description" id="taskDescription"></div>
+    <div class="editor-container"></div>
+    <button id="runButton" data-i18n="runTests">Run Tests</button>
+  </div>
+
+  <hr class="section-divider">
+
+  <pre id="output"></pre>
+
+  <div class="results-card">
+    <div id="testTableContainer"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  v 0.8.1
+</footer>
+
+<script type="module" src="src/main.js"></script>
 </body>
 </html>

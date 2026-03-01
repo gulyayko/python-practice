@@ -1,32 +1,35 @@
-import { EditorView, keymap } from "@codemirror/view";
+import { EditorView } from "@codemirror/view";
 import { EditorState } from "@codemirror/state";
 import { python } from "@codemirror/lang-python";
-import { oneDark } from "@codemirror/theme-one-dark";
 import { basicSetup } from "codemirror";
-import { autocompletion } from "@codemirror/autocomplete";
+import { autocompletion, completeFromList } from "@codemirror/autocomplete";
 
-export function createEditor(parent) {
+// можно добавить стандартный список для Python
+const pythonKeywords = [
+    "def", "return", "if", "elif", "else", "for", "while",
+    "import", "from", "as", "class", "try", "except", "finally",
+    "with", "lambda", "True", "False", "None", "and", "or", "not", "in", "is"
+];
+
+export function createEditor(parent, doc = "") {
     const state = EditorState.create({
-        doc: `def hello(name: str) -> str:
-    """
-    Return greeting.
-    :param name: person's name
-    """
-    return f"Hello, {name}"`,
+        doc,
         extensions: [
             basicSetup,
             python(),
-            oneDark,
-            autocompletion(),  // <- добавили автодополнение
-            indentUnit.of("    "), // <- 4 пробела
+            autocompletion({
+                override: [completeFromList(pythonKeywords)]
+            }),
             EditorView.theme({
-                "&": { height: "400px" }
-            })
+                "&": { height: "350px", backgroundColor: "#1e1e1e", color: "#ffffff" },
+                ".cm-content": { fontFamily: "'JetBrains Mono', monospace", fontSize: "16px" },
+                ".cm-cursor": { borderLeft: "1px solid #f8f8f0" },
+                "&.cm-focused .cm-selectionBackground": { backgroundColor: "#3a3f4b" },
+                ".cm-gutters": { backgroundColor: "#212121", color: "#5c6370", borderRight: "0" },
+            }),
+            EditorState.tabSize.of(4)
         ]
     });
 
-    return new EditorView({
-        state,
-        parent
-    });
+    return new EditorView({ state, parent });
 }
